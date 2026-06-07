@@ -1,8 +1,9 @@
 # serial-typer
 
-`serial-typer` 會把文字檔內容用指定速度「打字」到目前選定的 Windows 視窗。主要用途是把 switch/router 設定指令送到 Xshell 的 serial console，避免手動貼上時被設備吞字、輸入太快、或遇到互動式指令時來不及等待。
+`serial-typer` 會把文字檔內容用指定速度「打字」到目前選定的 Windows 視窗。主要用途是把 switch/router 設定指令送到 packet tracer 的 serial console，避免手動貼上時被設備吞字、輸入太快、或遇到互動式指令時來不及等待。
 
-這個工具不是透過 SSH 或 serial API 傳送資料，而是模擬鍵盤輸入。因此它能用在 Xshell、PuTTY、SecureCRT 或其他只能接鍵盤輸入的 console 視窗。
+這個工具不是透過 SSH 或 serial API 傳送資料，而是模擬鍵盤輸入。因此它能用在 Xshell、PuTTY、SecureCRT、packet tracer 或其他只能接鍵盤輸入的 console 視窗。
+(但其實 Xshell 可以複製貼上
 
 ## 功能
 
@@ -46,13 +47,13 @@ write memory
 uv run serial-typer commands.txt --dry-run
 ```
 
-選擇 Xshell 視窗後送出：
+選擇視窗後送出：
 
 ```powershell
 uv run serial-typer commands.txt --choose-window
 ```
 
-或不用選視窗，給自己 5 秒切到 Xshell：
+或不用選視窗，給自己 5 秒切到某個視窗：
 
 ```powershell
 uv run serial-typer commands.txt --focus-delay 5
