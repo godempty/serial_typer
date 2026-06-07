@@ -1,0 +1,28 @@
+
+en 
+conf t
+
+spanning mode rapid-
+
+username ccna secret ddob
+
+aaa new-model
+
+radius server radius
+  address ipv4 140.113.100.175 auth-port 1812
+  key 1l0v3T4
+  
+aaa authentication login ssh_login group radius local
+
+ip domain-name cs.nctu.edu.tw
+crypto key generate rsa 
+2048
+
+ip ssh version 2
+
+line vty 0 15
+  login authentication ssh_login
+  transport input ssh
+end
+
+write memory

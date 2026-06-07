@@ -1,0 +1,17 @@
+[project]
+name = "serial-typer"
+version = "0.1.0"
+description = "Type command files into a selected Windows application at a controlled WPM."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pyautogui>=0.9.54",
+    "pygetwindow>=0.0.9",
+]
+
+[project.scripts]
+serial-typer = "serial_typer.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

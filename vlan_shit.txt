@@ -1,0 +1,35 @@
+en
+conf t
+
+interface Vlan38
+ ip address 140.113.38.12 255.255.255.240
+ standby version 2
+ standby 38 ip 140.113.38.14
+ standby 38 preempt
+
+interface Vlan100
+ ip address 140.113.100.166 255.255.255.192
+
+interface Vlan111
+ ip address 140.113.111.182 255.255.255.192
+ standby version 2
+ standby 111 ip 140.113.111.190
+ standby 111 preempt
+
+interface Vlan169
+ ip address 140.113.169.112 255.255.255.128
+ standby version 2
+ standby 169 ip 140.113.169.126
+ standby 169 preempt
+
+interface Vlan209
+ ip address 172.168.10.12 255.255.255.248
+
+int g1/0/10
+  ip address 172.168.10.2 255.255.255.248
+
+interface Vlan369
+ ip address 140.113.69.252 255.255.255.0
+ standby version 2
+ standby 369 ip 140.113.69.254
+ standby 369 preempt
